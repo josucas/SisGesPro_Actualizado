@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Home</title>
+{% endblock%}
+
+{% block body %}
+<div class="card mb-5 row">
+		
+	<div class="card-header col-12">
+		<div class="row">
+			<div class="text-left col-8"><h2>Proyectos</h2></div>
+			<div class="text-right col-2">
+				<a class="btn btn-success" href="{% url 'proyectos:register' %}" role="button" >+Agregar</a>
+			</div>
+		</div>
+	</div>
+	
+	<div class="card-block p-0 col-12">
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<td>Codigo</td>
+					<td>Nombre</td>
+					<td></td>
+				</tr>
+			</thead>
+			<tbody>
+				{% if proyectos %}
+				{% for proyecto in proyectos %}
+				<tr>
+					<td>{{ proyecto.codigo }}</td>
+					<td>{{ proyecto.nombre }}</td>
+					<td><a class="btn btn-info" href="{% url 'proyectos:edit_proyecto' proyecto.codigo %}" role="button" >Editar</a></td>
+					<td><a class="btn btn-success" href="{% url 'proyectos:view_product' proyecto.codigo %}" role="button">Product Backlog</a></td>
+				
+				</tr>
+				{% endfor %}
+				
+				{% else %}
+				<p>No hay registro de proyectos</p>
+				{% endif %}
+			</tbody>
+		</table>
+	</div>
+</div>
+{% endblock %}

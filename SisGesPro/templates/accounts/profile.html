@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Perfiles</title>
+{% endblock%}
+
+{% block body %}
+
+<h1>Profile</h1>
+<p>CI: {{ user.ci }}</p>
+<p>Correo: {{ user.correo }} </p>
+<p>Nombre: {{ user.nombre }} </p>
+<p>Apellido: {{ user.apellido }} </p>
+<p>Telefono: {{ user.telefono }} </p>
+<p>Sexo: {{ user.sexo }}</p>
+
+{% endblock%} 

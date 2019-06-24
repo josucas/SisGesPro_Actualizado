@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Perfiles</title>
+{% endblock %}
+
+{% block body %}
+<form method="post">
+    {% csrf_token %}
+
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="form-group">
+                <label >Cedula</label>
+                <input class="form-control" type="text" name="ci">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="form-group">
+                <label>Nombre</label>
+                <input class="form-control" type="text" name="nombre">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="form-group">
+                <label >Apellido</label>
+                <input class="form-control" type="text" name="apellido">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="form-group">
+                <label >Correo Electrónico</label>
+                <input class="form-control" type="text" name="correo">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="form-group">
+                <label >Telefono</label>
+                <input class="form-control" type="text" name="telefono">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="form-group">
+                <label >Sexo</label>
+                <select class="form-control" type="text" name="sexo">
+                    <option value="M">Masculino</option>
+                    <option value="F">Femenino</option>
+                </select>
+            </div>
+        </div>
+    </div>    
+    <button type="submit" class="btn btn-success">Guardar</button>
+</form>
+
+{% endblock %}

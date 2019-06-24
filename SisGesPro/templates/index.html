@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Home</title>
+{% endblock%}
+
+{% block Cabecera %}
+{% if user.is_authenticated %}
+<div class="container">
+    <h1>{{user.get_rol}}</h1>
+    <p>{{ user.nombre }} {{ user.apellido }}, {{ user.correo }}</p>
+</div>
+ 
+{% endif %}
+{% endblock %}
+
+{% block body %}
+<h1>Home</h1>
+{% if user.is_authenticated %}
+<p>Bienvenido al sistema de gestion de proyectos agiles!</p>
+{% else %}
+<p>Puedes iniciar sesion aquí</p>
+<a href="{% url 'accounts:login' %}">login</a>
+{% endif %}
+
+{% endblock%}

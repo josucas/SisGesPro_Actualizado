@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Editar</title>
+{% endblock%}
+
+{% block body %}
+<form method="post">
+	<div class="card mb-5 row">
+		
+		<div class="card-header col-12">
+			<div class="row">
+				<div class="text-left col-8"><h2>ProductBacklog</h2></div>
+				<div class="text-right col-2">
+					<a class="btn btn-success" href="{% url 'proyectos:registerUS' pk=proyecto %}" role="button" >+US</a>
+				</div>
+			</div>
+		</div>
+		
+		<div class="card-block p-0 col-12">
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<td>Codigo</td>
+						<td>Nombre</td>
+					</tr>
+				</thead>
+				<tbody>
+					{% if productBacklog %}
+						{% for us in productBacklog %}
+						<tr>
+							<td>{{ us.codigo }}</td>
+							<td>{{ us.nombre }}</td>
+							<td><a class="btn btn-info" href="{% url 'proyectos:editUS' pk=proyecto,ustory=us.codigo %}" role="button" >Editar</a></td>
+						</tr>
+						{% endfor %}
+					
+					{% else %}
+					<p>No hay registro de User Storys</p>
+					{% endif %}
+				</tbody>
+			</table>
+		</div>
+	</div>
+</form>
+{% endblock %}

@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Editar</title>
+{% endblock%}
+
+{% block body %}
+<form method="post">
+	{% csrf_token %}
+	{% load bootstrap %}
+    {{ form|bootstrap_horizontal:'col-lg-4' }}
+	<!--
+	<div class="row">
+		<div class="col-md-8 col-md-offset-2">
+			<div class="form-group">
+				<label >Codigo</label>
+				<input class="form-control" type="text" name="codigo">
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-8 col-md-offset-2">
+			<div class="form-group">
+				<label>Codigo del proyecto</label>
+				<input class="form-control" type="text" name="proyecto">
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-8 col-md-offset-2">
+			<div class="form-group">
+				<label >Nombre del User Story</label>
+				<input class="form-control" type="text" name="nombre">
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-8 col-md-offset-2">
+			<div class="form-group">
+				<label >Descripcion</label>
+				<textarea class="form-control" type="text" name="descripcion"></textarea>
+			</div>
+		</div>
+	</div>	
+	-->
+	
+	<button type="submit" class="btn btn-success">Guardar</button>
+</form>
+{% endblock %}
