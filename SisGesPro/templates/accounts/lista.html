@@ -33,7 +33,7 @@
 					<td>{{ usuario.nombre }}</td>
 					<td>{{ usuario.apellido }}</td>
 					<td>{{ usuario.get_rol }}</td>
-					<td><a class="btn btn-info" href="{% url 'accounts:edit_account' usuario.ci %}" role="button" >Editar</a></td>
+					<td><a class="btn btn-info" href="{% url 'accounts:edit_account' pk=usuario.ci %}" role="button" >Editar</a></td>
 				
 				</tr>
 				{% endfor %}
