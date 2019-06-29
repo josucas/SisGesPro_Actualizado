@@ -59,13 +59,13 @@ class EditProyectos(UpdateView):
 	form_class = EditProyectoForm
 	template_name = 'proyectos/edit_proyecto.html'
 	success_url = reverse_lazy('proyectos:view_proyectos')
-"""
+
 def edit_profile(request, pk):
     if request.method == 'GET':
 	    form = EditProyectoForm(instance= Proyecto.objects.get(codigo=pk))
     else:
-		form = EditProyectoForm(request.POST, instance= Proyecto.objects.get(codigo=pk))
-		if form.is_valid():
-			form.save()
-		return redirect('proyectos:view_proyectos')
-	return render(request, 'proyectos/editing_proyecto.html', {'form':form})"""
+        form = EditProyectoForm(request.POST, instance= Proyecto.objects.get(codigo=pk))
+        if form.is_valid():
+            form.save()
+        return redirect('proyectos:view_proyectos')
+    return render(request, 'proyectos/editing_proyecto.html', {'form':form})

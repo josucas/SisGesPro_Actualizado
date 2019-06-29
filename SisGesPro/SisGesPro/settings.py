@@ -82,7 +82,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'SisGesPro',
         'USER': 'postgres',
-        'PASSWORD': 'admin123',#colocar contraseña de postgres
+        'PASSWORD': 'admin',#colocar contraseña de postgres
         'HOST': 'localhost',
         'PORT': 5432,
 

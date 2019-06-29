@@ -123,3 +123,5 @@ class Usuario(AbstractBaseUser):
         else:
             return 'ScrumMaster'
 
+    
+
