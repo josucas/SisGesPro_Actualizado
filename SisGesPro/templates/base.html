@@ -97,8 +97,11 @@
                 <a class="btn btn-success btn-block" href="#" role="button">Desarrollador</a>
                 {% elif user.rol == 'P' %}
                 <a class="btn btn-success btn-block" href="#" role="button">ProductOwner</a>
+                <a class="btn btn-info btn-sm" href="{% url 'proyectos:view_proyectos' %}" role="button">Proyectos</a>
                 {% else %}
                 <a class="btn btn-success btn-block" href="" role="button">ScrumMaster</a>
+                <a class="btn btn-info btn-sm" href="{% url 'accounts:view_counts' %}" role="button">Usuarios</a>
+                <a class="btn btn-info btn-sm" href="{% url 'proyectos:view_proyectos' %}" role="button">Proyectos</a>
                 {% endif %}
                 </p>
             </div>

@@ -3,6 +3,8 @@ from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 from .models import Proyecto, UserStory
 from .forms import RegistroProyectoForm, EditProyectoForm, RegistroUSForm, EditUSForm
 from django.urls import reverse_lazy
+from .tables import UsTable
+from django_tables2.config import RequestConfig
 # Create your views here.
 
 
@@ -10,6 +12,11 @@ def view_proyectos(request):
     return render(request, 'proyectos/lista.html', {
         'proyectos': Proyecto.objects.all()
     })
+
+def view_table(request):
+    table = UsTable(UserStory.objects.all())
+    RequestConfig(request).configure(table)
+    return render(request, 'proyectos/lista_us.html', {'table': table})
 
 def view_product(request, pk):
     return render(request, 'proyectos/product.html', {
@@ -69,3 +76,4 @@ def edit_profile(request, pk):
             form.save()
         return redirect('proyectos:view_proyectos')
     return render(request, 'proyectos/editing_proyecto.html', {'form':form})
+

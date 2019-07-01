@@ -1,6 +1,8 @@
 from django.db import models
 from apps.accounts.models import Usuario
 from django.contrib.postgres.fields import ArrayField, JSONField
+from django.shortcuts import render
+import django_tables2 as tables
 # Create your models here.
 
 class Proyecto(models.Model):
@@ -109,3 +111,5 @@ class UserStory(models.Model):
     
     def __str__(self):
         return self.codigo + ' ' + self.nombre + ' ' + self.estado
+    
+   
