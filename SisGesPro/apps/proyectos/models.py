@@ -63,7 +63,7 @@ class Proyecto(models.Model):
         elif self.estado == '5':
             return 'En revision'
         else:
-            return 'Aprovado'
+            return 'Aprobado'
     
     def get_integrantes(self):
         return self.integrantes

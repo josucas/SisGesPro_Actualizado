@@ -35,18 +35,18 @@ def editar_us(request, pk=None, ustory=None):
         form = EditUSForm(request.POST, instance=UserStory.objects.get(codigo = ustory, proyecto = pk))
         if form.is_valid():
             form.save()
-            return redirect(reverse('proyectos:view_product'))
+            return redirect(reverse('proyectos:view_proyectos'))
     else:
         form = EditUSForm(instance=UserStory.objects.get(codigo = ustory, proyecto = pk))
         args = {'form': form}
-        return render(request, 'accounts/edit_profile.html', args)
+        return render(request, 'proyectos/edit_us.html', args)
 
 
 class EditUS(UpdateView):
 	model = UserStory
 	form_class = EditUSForm
 	template_name = 'proyectos/edit_us.html'
-	success_url = reverse_lazy('proyectos:view_product')
+	success_url = reverse_lazy('proyectos:view_proyectos')
 
 class RegistroProyectos(CreateView):
 	model = Proyecto

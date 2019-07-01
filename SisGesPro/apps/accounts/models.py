@@ -16,8 +16,8 @@ class UserManager(BaseUserManager):
         return usuario
     
     #crea y guarda a un usuario super_usuario
-    def create_superuser(self, correo, password):
-        usuario = self.create_user(correo, password = password)
+    def create_superuser(self, correo, password, ci):
+        usuario = self.create_user(correo, password = password, ci= ci)
         usuario.is_superuser = True
         usuario.save(using = self._db)
         return usuario

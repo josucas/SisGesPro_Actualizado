@@ -61,6 +61,7 @@ def register(request):
         if form.is_valid():
             form.save()
             return redirect(reverse('accounts:home'))
+
     else:
         form = RegistrationForm()
 
@@ -68,6 +69,7 @@ def register(request):
         return render(request, 'accounts/reg_form.html',  {
             'form': args
         })
+  
 
 def edit_profile(request):
     if request.method == 'POST':

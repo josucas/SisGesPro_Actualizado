@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Editar US</title>
+{% endblock %}
+
+{% block body %}
+<form method="post">
+    {% csrf_token %}
+    {% load bootstrap %}
+	{{ form|bootstrap_horizontal:'col-lg-4' }}
+
+    <button type="submit" class="btn btn-success">Guardar</button>
+</form>
+
+{% endblock %}
